@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap");
+.main {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10rem;
+  margin: auto;
+  width: 100%;
+  background-color: transparent;
+
+  font-family: "IM Fell English SC";
+  overflow: hidden;
+  transition: all 0.5s;
+}

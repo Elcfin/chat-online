@@ -1,0 +1,69 @@
+.slice-button {
+  &-content,
+  &-content::after {
+    position: relative;
+    padding: 0.3rem 1.2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: none;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &-content {
+    border-bottom: 0.2rem solid #000;
+    border-radius: 0;
+    transition: border 0.5s;
+  }
+
+  &-content:hover {
+    border-bottom: 0.2rem solid #00e6f6;
+  }
+
+  &-content::after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(70% 0 0 0);
+    --slice-2: inset(50% 0 40% 0);
+    --slice-3: inset(10% 0 80% 0);
+    --slice-4: inset(40% 0 43% 0);
+    --slice-5: inset(0 0 80% 0);
+
+    content: "Chat Online";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+    clip-path: var(--slice-0);
+  }
+
+  &-content:hover::after {
+    animation: 0.5s glitch;
+    animation-timing-function: steps(2, end);
+  }
+
+  @keyframes glitch {
+    0% {
+      clip-path: var(--slice-1);
+      transform: translate(-1.5em, -0.8em);
+    }
+    25% {
+      clip-path: var(--slice-2);
+      transform: translate(-0.8em, 0.8em);
+    }
+    50% {
+      clip-path: var(--slice-3);
+      transform: translate(0.8em, 0.4em);
+    }
+    75% {
+      clip-path: var(--slice-4);
+      transform: translate(0.8em, 0);
+    }
+    100% {
+      clip-path: var(--slice-5);
+      transform: translate(0, 0);
+    }
+  }
+}

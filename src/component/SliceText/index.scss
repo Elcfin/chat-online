@@ -1,0 +1,113 @@
+.slice-text {
+  &-content,
+  &-content::after {
+    position: relative;
+    font-size: 4rem;
+    color: #fff;
+    user-select: none;
+  }
+
+  @media (max-width: 769.33px) {
+    &-content,
+    &-content::after {
+      font-size: 2.5rem;
+    }
+  }
+
+  &-content::after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(70% 0 0 0);
+    --slice-2: inset(50% 0 40% 0);
+    --slice-3: inset(10% 0 80% 0);
+    --slice-4: inset(40% 0 43% 0);
+    --slice-5: inset(0 0 80% 0);
+
+    content: "Chat Online";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+    clip-path: var(--slice-0);
+  }
+
+  &-content:hover::after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+  }
+
+  &-content:hover {
+    animation: 1s shake;
+    animation-timing-function: steps(2, end);
+  }
+
+  @keyframes glitch {
+    0% {
+      clip-path: var(--slice-1);
+      transform: translate(-20px, -10px);
+    }
+    10% {
+      clip-path: var(--slice-4);
+      transform: translate(10px, 5px);
+    }
+    20% {
+      clip-path: var(--slice-5);
+      transform: translate(-10px, 5px);
+    }
+    30% {
+      clip-path: var(--slice-1);
+      transform: translate(5px, 5px);
+    }
+    40% {
+      clip-path: var(--slice-3);
+      transform: translate(10px, 5px);
+    }
+    50% {
+      clip-path: var(--slice-4);
+      transform: translate(-20px, -5px);
+    }
+    60% {
+      clip-path: var(--slice-5);
+      transform: translate(20px, -5px);
+    }
+    70% {
+      clip-path: var(--slice-1);
+      transform: translate(10px, 5px);
+    }
+    80% {
+      clip-path: var(--slice-2);
+      transform: translate(-10px, 10px);
+    }
+    90% {
+      clip-path: var(--slice-5);
+      transform: translate(-10px, 0px);
+    }
+    100% {
+      clip-path: var(--slice-5);
+      transform: translate(0);
+    }
+  }
+
+  @keyframes shake {
+    10%,
+    90% {
+      transform: translate(-1px, 0);
+    }
+    20%,
+    80% {
+      transform: translate(2px, 0);
+    }
+    30%,
+    70% {
+      transform: translate(-4px, 0);
+    }
+    40%,
+    60% {
+      transform: translate(4px, 0);
+    }
+    50% {
+      transform: translate(-4px, 0);
+    }
+  }
+}

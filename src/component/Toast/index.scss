@@ -1,0 +1,59 @@
+.toast {
+  padding: 1rem;
+  margin: 1rem auto;
+  width: 16rem;
+  text-align: center;
+  word-break: break-all;
+  color: #000;
+  font-weight: bold;
+  border-radius: 0.3rem;
+
+  background: linear-gradient(
+    45deg,
+    transparent 3%,
+    #00e6f6 10%,
+    #00e6f6 15%,
+    /*     #f8f005 20%,
+    #f8f005 70%, */ #00e6f6 75%,
+    #00e6f6 90%,
+    transparent 97%
+  );
+
+  /* animation: appear 0.2s; */
+}
+
+.toast-shake {
+  animation: 0.5s shake;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate(-1px, 0);
+  }
+  20%,
+  80% {
+    transform: translate(2px, 0);
+  }
+  30%,
+  70% {
+    transform: translate(-4px, 0);
+  }
+  40%,
+  60% {
+    transform: translate(4px, 0);
+  }
+  50% {
+    transform: translate(-4px, 0);
+  }
+}
+
+/* @keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */

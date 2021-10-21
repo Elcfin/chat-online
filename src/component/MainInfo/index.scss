@@ -1,0 +1,62 @@
+.main-info {
+  --l-padding: 0.6rem; //左右内边距
+  --t-padding: 0.6rem; //上下内边距
+  --border-w: 0.1rem;
+
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #fff;
+
+  &-nickname-x {
+    position: relative;
+  }
+
+  &-nickname-label {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    bottom: calc(var(--t-padding) + var(--border-w));
+    transition: transform 0.5s;
+  }
+
+  &-nickname {
+    font-size: 1rem;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: var(--t-padding) var(--l-padding);
+    border-bottom: var(--border-w) solid;
+    border-radius: 0;
+
+    &:placeholder-shown::placeholder {
+      color: transparent;
+    }
+  }
+
+  &-nickname:not(:placeholder-shown) ~ &-nickname-label,
+  &-nickname:focus ~ &-nickname-label {
+    transform: translate(-50%, -2rem);
+  }
+
+  &-nickname-underline {
+    position: absolute;
+    bottom: 0;
+    height: calc(2 * var(--border-w));
+    width: 100%;
+    background-color: #00e6f6;
+    clip-path: inset(0 50% 0 50%);
+    transition: clip-path 0.5s, color 0.5s;
+  }
+
+  &-nickname:focus ~ &-nickname-underline {
+    clip-path: inset(0 0 0 0);
+  }
+
+  &-enter {
+    margin-top: 2.5rem;
+  }
+}
